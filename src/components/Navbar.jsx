@@ -1,5 +1,5 @@
-import { LogoImg } from "../utils/index";
-import { navLists } from "../constants/index";
+import { LogoImg } from "../utils";
+import { navLists } from "../constants";
 
 const Navbar = () => {
   return (
