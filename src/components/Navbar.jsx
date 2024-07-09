@@ -1,11 +1,11 @@
-import { LogoImg } from "../utils";
+import { logo } from "../utils";
 import { navLists } from "../constants";
 
 const Navbar = () => {
   return (
     <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
       <nav className="flex w-full max-w-screen-xl mx-auto">
-        <img src={LogoImg} alt="logo" width={36} height={36} />
+        <img src={logo} alt="LogoImg" width={36} height={36} />
 
         <div className="flex flex-1 justify-center max-sm:hidden">
           {navLists.map((nav) => (
