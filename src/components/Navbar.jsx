@@ -6,7 +6,6 @@ import { navLists } from "../constants";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,11 +15,11 @@ const Navbar = () => {
       <nav className="flex w-full max-w-screen-xl mx-auto">
         <img src={logo} alt="LogoImg" width={36} height={36} />
 
-        <div className="flex flex-1 justify-center hidden sm:flex">
+        <div className="flex flex-1 justify-end hidden sm:flex">
           {navLists.map((nav) => (
             <div
               key={nav}
-              className="px-5 text-sm cursor-pointer text-gray-500 hover:text-white transition-all"
+              className="px-5 text-sm cursor-pointer text-gray-400 hover:text-white transition-all"
             >
               {nav}
             </div>
