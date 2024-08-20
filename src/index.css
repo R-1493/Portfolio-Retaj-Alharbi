@@ -86,10 +86,17 @@ canvas {
     @apply ml-4 p-4 rounded-full bg-gray-300 backdrop-blur flex-center;
   }
   .intro-title {
-    @apply text-7xl translate-y-40 font-semibold tracking-tight text-gray-100  opacity-0  sm:text-8xl;
+    @apply text-7xl  font-semibold tracking-tight sm:text-8xl;
     font-family: Vollkorn, serif;
+    color: #fff;
+    opacity: 1;
+    text-transform: uppercase;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
-
+  .char {
+    transform: translateY(115px);
+    transition: transform 0.5s;
+  }
   .hiw-title {
     @apply text-4xl md:text-7xl font-semibold text-center;
   }
