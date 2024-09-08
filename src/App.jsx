@@ -9,7 +9,7 @@ const App = () => {
   return (
     <main className="bg-black">
       <Navbar />
-      {/* <Scene /> */}
+      <Scene />
       <Intro />
       <About />
       <Project />

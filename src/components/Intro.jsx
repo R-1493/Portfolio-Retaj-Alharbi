@@ -12,24 +12,41 @@ const Intro = () => {
     setTimeout(() => {
       gsap.from(intro1.chars, {
         y: 115,
+        opacity: 0,
         stagger: 0.1,
         delay: 0.2,
-        duration: 0.1,
+        duration: 1,
       });
-    }, 500); // Adjust the delay time as needed
+    }, 500);
+
+    gsap.to(intro1.chars, {
+      y: 115,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "#intro1",
+        start: "top center",
+        end: "top 5%",
+        scrub: 1,
+        toggleActions: "restart none reverse none",
+      },
+    });
   }, []);
 
   useEffect(() => {
     const intro2 = new SplitType("#intro2");
     gsap.from(intro2.chars, {
       y: 115,
+      opacity: 0,
       stagger: 0.1,
-      delay: 0.2,
-      duration: 0.1,
+      duration: 1,
       scrollTrigger: {
         trigger: "#intro2",
-        start: "top center",
-        end: "bottom 20%",
+        start: "top 100%",
+        end: "bottom 80%",
+        scrub: 1,
+        toggleActions: "restart none reverse none",
       },
     });
   }, []);
