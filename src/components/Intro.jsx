@@ -1,23 +1,28 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import { useGSAP } from "@gsap/react";
 import { useEffect } from "react";
 import SplitType from "split-type";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Intro = () => {
-  const mytext1 = new SplitType("#intro1");
-  gsap.to(mytext1.chars, {
-    y: 0,
-    stagger: 0.1,
-    delay: 0.2,
-    duration: 0.1,
-  });
   useEffect(() => {
-    const mytext2 = new SplitType("#intro2");
-    gsap.to(mytext2.chars, {
-      y: 0,
+    const intro1 = new SplitType("#intro1", { types: "chars" });
+    intro1.split();
+
+    setTimeout(() => {
+      gsap.from(intro1.chars, {
+        y: 115,
+        stagger: 0.1,
+        delay: 0.2,
+        duration: 0.1,
+      });
+    }, 500); // Adjust the delay time as needed
+  }, []);
+
+  useEffect(() => {
+    const intro2 = new SplitType("#intro2");
+    gsap.from(intro2.chars, {
+      y: 115,
       stagger: 0.1,
       delay: 0.2,
       duration: 0.1,
