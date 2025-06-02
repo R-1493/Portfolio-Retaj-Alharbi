@@ -9,7 +9,7 @@ const Navbar = () => {
   const location = useLocation()
 
   return (
-    <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
+    <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center ">
       <nav className="flex w-full max-w-screen-xl mx-auto">
         <img src={logo} alt="LogoImg" width={36} height={36} />
 
@@ -56,7 +56,7 @@ const Navbar = () => {
       </nav>
 
       {isMenuOpen && (
-        <div className="fixed inset-0 z-10 bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-20 bg-black bg-opacity-50">
           <div className="fixed inset-y-0 right-0 z-20 w-64 bg-black overflow-y-auto px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <button
