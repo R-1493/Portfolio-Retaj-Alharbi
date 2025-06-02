@@ -1,10 +1,9 @@
-//rcs
 import React from "react";
-
+import Form from "../../components/Form";
 const Contact = () => {
   return (
-    <div className="mt-20 w-full h-screen">
-      <h1>Contact Section</h1>
+    <div>
+      <Form />
     </div>
   );
 };

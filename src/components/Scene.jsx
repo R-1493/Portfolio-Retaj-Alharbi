@@ -10,14 +10,16 @@ function Loader() {
 
 const Scene = () => {
   return (
-    <Canvas gl={{ antialias: true }} dpr={[1, 1.5]} className="relative">
-      <directionalLight position={[-5, -5, 5]} intensity={4} />
-      <Suspense fallback={<Loader />}>
-        <ScrollControls damping={0.2} pages={1}>
-          <BallModel />
-        </ScrollControls>
-      </Suspense>
-    </Canvas>
+    <div className="absolute inset-0 z-20 ">
+      <Canvas gl={{ antialias: true }} dpr={[1, 1.5]} className="block">
+        <directionalLight position={[-5, -5, 5]} intensity={4} />
+        <Suspense fallback={<Loader />}>
+          <ScrollControls damping={0.2} pages={2}>
+            <BallModel className="h-full w-full" />
+          </ScrollControls>
+        </Suspense>
+      </Canvas>
+    </div>
   );
 };
 

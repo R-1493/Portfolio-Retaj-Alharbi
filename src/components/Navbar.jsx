@@ -1,14 +1,12 @@
-//rsc
-//resource (https://tailwindui.com/components/marketing/elements/headers)
-import React, { useState } from "react";
-import { logo } from "../utils";
-import { navLists } from "../constants";
+import React, { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import { logo } from '../utils'
+import { navLists } from '../constants'
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const location = useLocation()
 
   return (
     <header className="w-full py-5 sm:px-10 px-5 flex justify-between items-center">
@@ -17,17 +15,26 @@ const Navbar = () => {
 
         <div className="flex flex-1 justify-end hidden sm:flex">
           {navLists.map((nav) => (
-            <div
+            <Link
               key={nav}
-              className="px-5 text-sm cursor-pointer text-gray-400 hover:text-white transition-all"
+              to={nav === 'Home' ? '/' : `/${nav.toLowerCase()}`}
+              className={`px-5 text-sm cursor-pointer transition-all ${
+                location.pathname ===
+                (nav === 'Home' ? '/' : `/${nav.toLowerCase()}`)
+                  ? 'text-[#F576A9]'
+                  : 'text-gray-400 hover:text-white'
+              }`}
             >
               {nav}
-            </div>
+            </Link>
           ))}
         </div>
+
         <button
           type="button"
-          className="flex items-baseline sm:hidden text-gray-500  hover:text-white max-sm:justify-end max-sm:flex-1 transition-all"
+          className={`flex items-baseline sm:hidden max-sm:justify-end max-sm:flex-1 transition-all ${
+            isMenuOpen ? 'text-[#F576A9]' : 'text-gray-500'
+          }`}
           onClick={toggleMenu}
         >
           <span className="sr-only">Open menu</span>
@@ -74,17 +81,24 @@ const Navbar = () => {
                 </svg>
               </button>
             </div>
+
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navLists.map((nav) => (
-                    <div
+                    <Link
                       key={nav}
-                      className="px-5 text-sm cursor-pointer text-gray-500 hover:text-white transition-all"
-                      onClick={toggleMenu}
+                      to={nav === 'Home' ? '/' : `/${nav.toLowerCase()}`}
+                      onClick={() => setIsMenuOpen(false)} 
+                      className={`block w-full py-2 z-50 text-sm font-medium transition-colors ${
+                        location.pathname ===
+                        (nav === 'Home' ? '/' : `/${nav.toLowerCase()}`)
+                          ? 'text-[#F576A9]'
+                          : 'text-gray-400 hover:text-white'
+                      }`}
                     >
                       {nav}
-                    </div>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -93,7 +107,7 @@ const Navbar = () => {
         </div>
       )}
     </header>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

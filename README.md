@@ -19,3 +19,6 @@ resource (https://gsap.com/docs/v3/Installation/?tab=npm&module=esm&method=priva
 
 ### `clip-path`
 resource (https://www.cssportal.com/css-clip-path-generator/)
+
+
+### `npm install react-spring`
