@@ -21,7 +21,7 @@ const Navbar = () => {
               className={`px-5 text-sm cursor-pointer transition-all ${
                 location.pathname ===
                 (nav === 'Home' ? '/' : `/${nav.toLowerCase()}`)
-                  ? 'text-[#F576A9]'
+                  ? 'text-[#F576A9] font-bold'
                   : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -89,11 +89,11 @@ const Navbar = () => {
                     <Link
                       key={nav}
                       to={nav === 'Home' ? '/' : `/${nav.toLowerCase()}`}
-                      onClick={() => setIsMenuOpen(false)} 
+                      onClick={() => setIsMenuOpen(false)}
                       className={`block w-full py-2 z-50 text-sm font-medium transition-colors ${
                         location.pathname ===
                         (nav === 'Home' ? '/' : `/${nav.toLowerCase()}`)
-                          ? 'text-[#F576A9]'
+                          ? 'text-[#F576A9] font-bold'
                           : 'text-gray-400 hover:text-white'
                       }`}
                     >

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import img from '../../public/assets/img/logo.svg'
+import { logo } from '../utils'
 import { gsap } from 'gsap'
 import SplitType from 'split-type'
 
@@ -30,7 +30,7 @@ const Form = () => {
         <img
           id="animate"
           alt="Your Company"
-          src={img}
+          src={logo}
           className="mx-auto h-10 w-auto opacity-1"
         />
         <h2
