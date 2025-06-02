@@ -6,77 +6,75 @@ import { Img4 } from '../../utils'
 
 const Projects = () => {
   return (
-    <section class="bg-zinc-50 overflow-hidden">
-      <div class="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-12 lg:py-24 space-y-24 h-svh flex flex-col justify-center">
-        <div class="flex flex-col sm:flex-row mx-auto">
-          <a href="#_">
+    <section className="bg-zinc-50 overflow-hidden">
+      <div className="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-12 lg:py-24 space-y-24 h-auto min-h-screen flex flex-col justify-center">
+        <div className="flex flex-col sm:flex-row mx-auto gap-4 sm:gap-0">
+          <a href="#_" className="sm:w-1/4 p-2 sm:p-0">
             <img
               src={Img1}
               alt="Tanznaite Project"
-              class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full  hover:scale-150 transform origin-bottom"
-            />{' '}
+              className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full hover:scale-150 transform origin-bottom max-h-64 object-cover"
+            />
           </a>
-          <a href="#_">
-            {' '}
+          <a href="#_" className="sm:w-1/4 p-2 sm:p-0">
             <img
               src={Img2}
-              class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full  hover:scale-150 transform origin-bottom"
+              className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full hover:scale-150 transform origin-bottom max-h-64 object-cover"
               alt="#_"
-            />{' '}
+            />
           </a>
-          <a href="#_">
-            {' '}
+          <a href="#_" className="sm:w-1/4 p-2 sm:p-0">
             <img
               src={Img3}
-              class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full  hover:scale-150 transform origin-bottom"
+              className="rounded-xl rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full hover:scale-150 transform origin-bottom max-h-64 object-cover"
               alt="#_"
-            />{' '}
+            />
           </a>
-          <a href="#_">
-            {' '}
+          <a href="#_" className="sm:w-1/4 p-2 sm:p-0">
             <img
               src={Img4}
-              class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full  hover:scale-150 transform origin-bottom"
+              className="rounded-xl -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full hover:scale-150 transform origin-bottom max-h-64 object-cover"
               alt="#_"
-            />{' '}
+            />
           </a>
         </div>
-        <div class="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
-          <div class="pointer-events-auto flex w-full max-w-md divide-x divide-neutral-200 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-            <div class="flex w-0 flex-1 items-center p-4">
-              <div class="w-full">
-                <p class="text-sm font-medium text-neutral-900">Tech Stack:</p>
-                <p class="mt-1 text-sm text-neutral-500">
+        <div className="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
+          <div className="pointer-events-auto flex w-full max-w-md divide-x divide-neutral-200 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+            <div className="flex w-0 flex-1 items-center p-4">
+              <div className="w-full">
+                <p className="text-sm font-medium text-neutral-900">
+                  Tech Stack:
+                </p>
+                <p className="mt-1 text-sm text-neutral-500">
                   C#, ASP.NET, React (Vite), Tailwind CSS, PostgreSQL
                 </p>
-                <p class="mt-2 text-xs text-[#F576A9]  underline">
-                  {' '}
-                  <a>by © Retaj Alharbi</a>{' '}
+                <p className="mt-2 text-xs text-[#F576A9] underline">
+                  <a>by © Retaj Alharbi</a>
                 </p>
               </div>
             </div>
-            <div class="flex">
-              <div class="flex flex-col divide-y divide-neutral-200">
-                <div class="flex h-0 flex-1">
-                  {' '}
+            <div className="flex">
+              <div className="flex flex-col divide-y divide-neutral-200">
+                <div className="flex h-0 flex-1">
                   <a
                     target="_blank"
                     href="https://github.com/R-1493/Tanznite-Frontend"
                     type="button"
-                    class="flex w-full items-center justify-center rounded-none rounded-tr-lg border border-transparent px-4 py-3 text-sm font-medium text-[#F576A9]  focus:z-10 focus:outline-none focus:ring-2 "
+                    className="flex w-full items-center justify-center rounded-none rounded-tr-lg border border-transparent px-4 py-3 text-sm font-medium text-[#F576A9] focus:z-10 focus:outline-none focus:ring-2"
+                    rel="noreferrer"
                   >
                     Get the code Frontend
-                  </a>{' '}
+                  </a>
                 </div>
-                <div class="flex h-0 flex-1">
-                  {' '}
+                <div className="flex h-0 flex-1">
                   <a
                     target="_blank"
                     href="https://github.com/R-1493/Tanznite-Backend-"
-                    class="flex w-full items-center justify-center rounded-none rounded-br-lg border border-transparent px-4 py-3 text-sm font-medium text-[#F576A9]   focus:outline-none focus:ring-2 "
+                    className="flex w-full items-center justify-center rounded-none rounded-br-lg border border-transparent px-4 py-3 text-sm font-medium text-[#F576A9] focus:outline-none focus:ring-2"
+                    rel="noreferrer"
                   >
                     Get the code Backend
-                  </a>{' '}
+                  </a>
                 </div>
               </div>
             </div>
