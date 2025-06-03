@@ -1,2 +1,2 @@
 // src/constants/index.js
-export const navLists = ["Home", "Projects", "Contact"];
+export const navLists = ['Home', 'Project', 'Contact']
