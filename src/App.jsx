@@ -1,22 +1,34 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Home from './Pages/home/Home'
-import Project from './Pages/project/Project'
-import Contact from './Pages/contact/Contact'
-import NotFound from './Pages/not found/NotFound'
+import Loading from './components/Loading'
+
+const Home = lazy(() => import('./Pages/home/Home'))
+const Project = lazy(() => import('./Pages/project/Project'))
+const Contact = lazy(() => import('./Pages/contact/Contact'))
+const NotFound = lazy(() => import('./Pages/not found/NotFound'))
+
+const AppContent = () => {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  )
+}
 
 const App = () => {
   return (
     <BrowserRouter>
       <main className="bg-black min-h-screen">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Project" element={<Project />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <AppContent />
+        </Suspense>
       </main>
     </BrowserRouter>
   )

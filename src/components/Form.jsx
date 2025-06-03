@@ -98,10 +98,7 @@ const Form = () => {
 
         <p className="mt-10 text-center text-sm/6 text-gray-500">
           I'd love to hear from you!{' '}
-          <a
-            href="#"
-            className="font-semibold text-[#F576A9] hover:text-[#ff4f95]"
-          >
+          <a className="font-semibold text-[#F576A9] hover:text-[#ff4f95]">
             Fill out the form below and I’ll get back to you soon.
           </a>
         </p>
