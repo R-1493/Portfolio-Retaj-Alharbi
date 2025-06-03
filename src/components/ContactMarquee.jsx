@@ -6,11 +6,14 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const contacts = [
-  { label: 'Email', url: 'mailto:retajalharbi@gmail.com' },
-  { label: 'Behance', url: 'https://behance.net/retajalharbi' },
-  { label: 'Phone', url: 'tel:+966500000000' },
-  { label: 'GitHub', url: 'https://github.com/retajalharbi' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/in/retajalharbi' },
+  { label: 'Email', url: 'mailto:retajfaisalalharbi@gmail.com' },
+  { label: 'Behance', url: 'https://www.behance.net/retajharbi' },
+  { label: 'Phone', url: 'tel:+966563079535' },
+  { label: 'GitHub', url: 'https://github.com/R-1493' },
+  {
+    label: 'LinkedIn',
+    url: 'http://www.linkedin.com/in/retaj-alharbi-907730234 ',
+  },
 ]
 
 const ContactMarquee = () => {
@@ -57,7 +60,6 @@ const ContactMarquee = () => {
 
     setupAnimation()
 
-    // Handle window resize
     const handleResize = () => {
       setupAnimation()
     }
