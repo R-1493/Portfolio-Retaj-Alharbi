@@ -1,3 +1,4 @@
+// pages/Project/index.jsx  (Project.jsx) — nav buttons restyled to match, everything else same
 import React, { useRef, useEffect, useState } from 'react'
 import ProjectList from '../../components/Project'
 import projects from '../../data/Data.jsx'
@@ -58,7 +59,7 @@ const Project = () => {
       `}</style>
 
       <div className="max-w-screen-xl mx-auto px-8 md:px-12 relative h-full">
-        <div className="absolute top-1/2 left-4 md:left-10 z-10 transform -translate-y-1/2">
+        <div className="absolute top-1/2 left-4 md:left-10 z-20 transform -translate-y-1/2">
           <button
             ref={prevRef}
             style={{
@@ -66,11 +67,12 @@ const Project = () => {
               cursor: isBeginning ? 'default' : 'pointer',
             }}
             disabled={isBeginning}
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:scale-110 transition-transform"
           >
-            <HiOutlineArrowCircleLeft className="text-[#F576A9] text-4xl md:text-5xl hover:scale-110 transition-transform" />
+            <HiOutlineArrowCircleLeft className="text-[#F576A9] text-3xl md:text-4xl" />
           </button>
         </div>
-        <div className="absolute top-1/2 right-4 md:right-10 z-10 transform -translate-y-1/2">
+        <div className="absolute top-1/2 right-4 md:right-10 z-20 transform -translate-y-1/2">
           <button
             ref={nextRef}
             style={{
@@ -78,8 +80,9 @@ const Project = () => {
               cursor: isEnd ? 'default' : 'pointer',
             }}
             disabled={isEnd}
+            className="w-11 h-11 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm shadow-md hover:scale-110 transition-transform"
           >
-            <HiOutlineArrowCircleRight className="text-[#F576A9] text-4xl md:text-5xl hover:scale-110 transition-transform" />
+            <HiOutlineArrowCircleRight className="text-[#F576A9] text-3xl md:text-4xl" />
           </button>
         </div>
         {navigationReady && (
