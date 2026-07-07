@@ -83,7 +83,7 @@ const ProjectList = ({ project }) => {
                   <img
                     src={item.src}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   />
                 ) : (
                   <video
@@ -93,7 +93,7 @@ const ProjectList = ({ project }) => {
                     loop
                     playsInline
                     onClick={handleVideoClick}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 cursor-pointer"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110 cursor-pointer"
                   />
                 )}
 
