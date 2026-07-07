@@ -1,5 +1,6 @@
 // components/Project/index.jsx  (ProjectList.jsx)
 import React from "react";
+import { useState } from "react";
 import {
   HiOutlineCodeBracket,
   HiOutlineGlobeAlt,
@@ -19,6 +20,24 @@ const linkIcon = (label) => {
 };
 
 const ProjectList = ({ project }) => {
+  const handleVideoClick = (e) => {
+    const video = e.currentTarget;
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen().catch((err) => {
+        console.error("Fullscreen request failed:", err.message);
+      });
+    } else if (video.webkitRequestFullscreen) {
+      // Safari (desktop)
+      video.webkitRequestFullscreen();
+    } else if (video.webkitEnterFullscreen) {
+      // iOS Safari — only works directly on the <video> element
+      video.webkitEnterFullscreen();
+    } else {
+      console.warn("Fullscreen API not supported on this element/browser.");
+    }
+  };
+
   const sources = [];
 
   if (project.frontend)
@@ -73,11 +92,12 @@ const ProjectList = ({ project }) => {
                     muted
                     loop
                     playsInline
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    onClick={handleVideoClick}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 cursor-pointer"
                   />
                 )}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </>
             </div>
           ))}
