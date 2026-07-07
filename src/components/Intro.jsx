@@ -106,7 +106,7 @@ const Intro = () => {
         </div>
       </section>
 
-      <section className="text-center nav-height relative intro-section z-10">
+      <section className="text-center relative intro-section z-10">
         <div className="h-5/6 flex-center flex-col">
           <h1 id="intro2" className="intro-title">
             Developer and <p>Designer</p>

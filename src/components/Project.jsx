@@ -1,29 +1,33 @@
 // components/Project/index.jsx  (ProjectList.jsx)
-import React from 'react'
+import React from "react";
 import {
   HiOutlineCodeBracket,
   HiOutlineGlobeAlt,
   HiOutlinePlayCircle,
   HiOutlineArrowUpRight,
-} from 'react-icons/hi2'
+} from "react-icons/hi2";
 
 const linkIcon = (label) => {
-  if (label.toLowerCase().includes('code')) return HiOutlineCodeBracket
-  if (label.toLowerCase().includes('website')) return HiOutlineGlobeAlt
-  if (label.toLowerCase().includes('demo') || label.toLowerCase().includes('video'))
-    return HiOutlinePlayCircle
-  return HiOutlineArrowUpRight
-}
+  if (label.toLowerCase().includes("code")) return HiOutlineCodeBracket;
+  if (label.toLowerCase().includes("website")) return HiOutlineGlobeAlt;
+  if (
+    label.toLowerCase().includes("demo") ||
+    label.toLowerCase().includes("video")
+  )
+    return HiOutlinePlayCircle;
+  return HiOutlineArrowUpRight;
+};
 
 const ProjectList = ({ project }) => {
-  const sources = []
+  const sources = [];
 
-  if (project.frontend) sources.push({ label: 'Frontend', url: project.frontend })
-  if (project.backend) sources.push({ label: 'Backend', url: project.backend })
-  if (project.website) sources.push({ label: 'Website', url: project.website })
-  if (project.demo) sources.push({ label: 'Demo', url: project.demo })
+  if (project.frontend)
+    sources.push({ label: "Frontend", url: project.frontend });
+  if (project.backend) sources.push({ label: "Backend", url: project.backend });
+  if (project.website) sources.push({ label: "Website", url: project.website });
+  if (project.demo) sources.push({ label: "Demo", url: project.demo });
 
-  const techChips = project.desc.split(',').map((t) => t.trim())
+  const techChips = project.desc.split(",").map((t) => t.trim());
 
   return (
     <section className="relative  overflow-hidden min-h-screen">
@@ -38,8 +42,6 @@ const ProjectList = ({ project }) => {
         .proj-play-pulse { animation: proj-pulse 2.2s ease-in-out infinite; }
       `}</style>
 
-      
-
       <div className="relative max-w-5xl mx-auto px-6 md:px-10 pt-28 pb-56 md:pb-48">
         <p className="proj-font-body text-xs tracking-[0.25em] uppercase text-[#F576A9] mb-2">
           Project
@@ -50,24 +52,38 @@ const ProjectList = ({ project }) => {
 
         {/* Bento gallery */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 auto-rows-[130px] sm:auto-rows-[150px]">
-          {project.imageList.map((img, i) => (
+          {project.mediaList.map((item, i) => (
             <div
               key={i}
               className={`relative rounded-2xl overflow-hidden group border border-white/10 ${
-                i === 0 ? 'col-span-2 row-span-2' : ''
+                i === 0 ? "col-span-2 row-span-2" : ""
               }`}
             >
-              <img
-                src={img}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <>
+                {item.type === "image" ? (
+                  <img
+                    src={item.src}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                )}
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </>
             </div>
           ))}
 
           {project.video && (
-             <a
+            <a
               href={project.video}
               target="_blank"
               rel="noreferrer"
@@ -99,7 +115,7 @@ const ProjectList = ({ project }) => {
 
           <div className="flex flex-wrap gap-3">
             {sources.map(({ label, url }, i) => {
-              const Icon = linkIcon(label)
+              const Icon = linkIcon(label);
               return (
                 <a
                   key={i}
@@ -111,17 +127,18 @@ const ProjectList = ({ project }) => {
                   <Icon className="text-base" />
                   {label}
                 </a>
-              )
+              );
             })}
           </div>
 
           <p className="proj-font-body text-[11px] text-[#A895AE] mt-5">
-            by <span className="text-[#F576A9] font-medium">© Retaj Alharbi</span>
+            by{" "}
+            <span className="text-[#F576A9] font-medium">© Retaj Alharbi</span>
           </p>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectList
+export default ProjectList;
